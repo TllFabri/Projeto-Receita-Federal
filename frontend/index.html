@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema QSA - Consulta de Empresas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="Navbar">
+    <div>
+      <h1>Sistema QSA</h1>
+      <p>Consulta de Empresas e Análise de Sócios</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>Consulta por CNPJ</h2>
+
+      <p class="descricao">
+        Digite um CNPJ da base de amostra para consultar os dados da empresa,
+        sócios, empresas relacionadas e nível de risco.
+      </p>
+
+      <div class="formulario">
+        <input type="text" id="cnpjInput" placeholder="Ex: 00.000.000/0000-00" oninput="buscarParcial(this.value)" maxlength="18">
+        <button onclick="consultarEmpresa()">Consultar</button>
+      </div>
+
+      <div id="sugestoes" class="sugestoes"></div>
+
+      <div id="listaSugestoes" class="lista-sugestoes" style="display:none">
+        <strong>Lista de sugestões:</strong>
+        <div id="listaSugestoesItens"></div>
+      </div>
+
+      <div class="historico">
+        <strong>Histórico de pesquisas:</strong>
+        <div id="listaHistorico" class="lista-historico">
+          <p>Nenhuma pesquisa realizada ainda.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultado" class="resultado"></section>
+
+  </main>
+
+  <div id="modal" class="modal-overlay" onclick="fecharModal(event)">
+    <div class="modal-box">
+      <span class="modal-fechar" onclick="fecharModalBtn()">✕</span>
+      <div id="modal-conteudo"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Projeto Receita Federal</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+# Diagrama do Banco de Dados
+
+O diagrama representa a estrutura do banco de dados utilizado no sistema de análise societária e consulta empresarial.
+
+O modelo foi desenvolvido para organizar os relacionamentos entre empresas e sócios, permitindo consultas rápidas e análise de vínculos empresariais.
+
+
+# Entidades do Banco de Dados
+
+## Empresa
+
+Tabela responsável pelo armazenamento das empresas cadastradas no sistema.
+
+Principais informações:
+- CNPJ
+- razão social
+
+
+## Sócio
+
+Tabela responsável pelo armazenamento dos sócios e administradores das empresas.
+
+Principais informações:
+- CPF
+- nome do sócio
+
+
+## Participação
+
+Tabela responsável pelo relacionamento entre empresas e sócios.
+
+A tabela permite identificar:
+- participação societária
+- vínculos empresariais
+- conexões entre empresas
+
+
+# Relacionamentos
+
+O banco de dados foi estruturado utilizando:
+- chaves primárias (PRIMARY KEY)
+- chaves estrangeiras (FOREIGN KEY)
+- relacionamentos entre tabelas
+
+A tabela `participacao` realiza a ligação entre:
+- empresas
+- sócios
+
+
+# Objetivo do Modelo
+
+O modelo foi desenvolvido para:
+- identificar vínculos entre empresas
+- auxiliar análises societárias
+- facilitar consultas empresariais
+- apoiar análises de crédito
+- organizar relacionamentos entre sócios e empresas

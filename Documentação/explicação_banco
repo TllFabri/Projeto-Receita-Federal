@@ -1,0 +1,83 @@
+# Estrutura do Banco de Dados
+
+O banco de dados foi desenvolvido em PostgreSQL para armazenar informações relacionadas à análise societária e participação empresarial.
+
+O modelo foi estruturado para organizar empresas, sócios e vínculos societários, permitindo consultas rápidas e análise de conexões empresariais.
+
+O banco foi dividido em módulos para facilitar a organização e manutenção do sistema.
+
+banco/
+│
+├── diagrama/
+│   └── der.pdf
+│
+├── scripts/
+│   ├── criacao.sql
+│   ├── inserts.sql
+│   └── consultas.sql
+
+
+
+
+# Tabelas do Banco de Dados
+
+## Empresa
+
+Tabela responsável pelo armazenamento das empresas cadastradas no sistema.
+
+Campos:
+- cnpj → identificador único da empresa
+- razao_social → nome oficial da empresa
+
+
+
+## Socio
+
+Tabela responsável pelo armazenamento dos sócios vinculados às empresas.
+
+Campos:
+- cpf → identificador único do sócio
+- nome → nome do sócio
+
+
+
+## Participacoes
+
+Tabela intermediária responsável pelo relacionamento entre sócios e empresas.
+
+Campos:
+- id → identificador da participação
+- cpf → referência ao sócio
+- empresa_cnpj → referência à empresa
+- percentual_participacao → percentual de participação societária
+
+
+
+# Relacionamentos
+
+O banco de dados foi modelado utilizando relacionamentos entre tabelas para garantir organização e integridade das informações.
+
+Regras implementadas:
+- um sócio pode participar de várias empresas
+- uma empresa pode possuir vários sócios
+- a tabela `participacoes` realiza a ligação entre empresas e sócios
+
+
+
+# Regras Utilizadas
+
+O modelo utiliza:
+- chaves primárias (PRIMARY KEY)
+- chaves estrangeiras (FOREIGN KEY)
+- restrição UNIQUE para evitar registros duplicados
+- integridade referencial entre tabelas
+
+
+# Objetivo do Banco de Dados
+
+O banco foi desenvolvido para:
+- armazenar informações empresariais
+- identificar vínculos societários
+- facilitar consultas de empresas e sócios
+- auxiliar análises societárias
+- apoiar análises de crédito
